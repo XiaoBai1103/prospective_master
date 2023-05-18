@@ -6,9 +6,10 @@
 #include<stdio.h>
 #include<malloc.h>
 #define initSize 10
+#define ElemType int 
 typedef struct 
 {
-    int *data;//指向申请的存储空间
+    ElemType *data;//指向申请的存储空间
     int maxSize;//最大容量
     int length;//当前容量
 }seqList;
@@ -18,10 +19,12 @@ typedef struct
     需要把返回值转化为int类型指针
 */
 void listInit(seqList &L){
-    L.data = (int *)malloc(initSize*sizeof(int));
+    L.data = (int *)malloc(initSize*sizeof(ElemType));
     L.length = 0;
     L.maxSize = initSize;
 }
+//查找
+
 //增加长度
 void listIncrease(seqList &L,int len){
     int *p = L.data;
@@ -34,7 +37,7 @@ void listIncrease(seqList &L,int len){
     free(p);
 }
 //插入数据 位置:i 元素:e
-bool listInsert(seqList &L,int i,int e){
+bool listInsert(seqList &L,int i,ElemType e){
     //判断数值合法、存储空间是否已满
     if(i<1||i>L.length+1||L.length>=L.maxSize-1)
         return false;
@@ -47,7 +50,7 @@ bool listInsert(seqList &L,int i,int e){
     }
 }
 //删除数据 位置:i 元素:e(e的作用是把删除的元素带回)
-bool listDelete(seqList &L,int i,int &e){
+bool listDelete(seqList &L,int i,ElemType &e){
     //判断数值合法、存储空间是否已满
     if(i<1||i>L.length)
         return false;
