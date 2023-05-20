@@ -26,7 +26,7 @@
         数值范围0~255 (越界则取自身)
     ·图像融合
         需要大小相同的图像，可以用resize方法
-    ·cv2.addWeighted(img1,w1,img2,w2)
+    ·cv2.addWeighted(img1,w1,img2,w2,b) w为权重,b为偏置用于调节亮度
 '''
 import cv2
 import matplotlib.pyplot as plt
