@@ -28,17 +28,24 @@ class LinkedList:
     
     # 在指定位置插入 前一个结点prevNode 元素:e
     def listInsert(self, prevNode, e):
-        if prevNode is None:
+        if prevNode <= 0:
             return False
-        else:
-            new_node = Node(e)
-            current = self.head
-            while current.next is not None and current.next.data != prevNode:
-                current = current.next
-            new_node.next = current.next.next
-            current.next.next = new_node
+        i = 1#节点计数器
+        new_node = Node(e)
+        current = self.head
+        while current is not None:
+            if i == prevNode - 1:
+                new_node.next = current.next
+                current.next = new_node
+                return True
+            current = current.next
+            i += 1
+        if i == prevNode - 1:
+            new_node.next = current
+            self.head = new_node
             return True
-    
+        return False
+
     #删除节点
     def delete(self, data):
         if self.head is None:
@@ -56,18 +63,25 @@ class LinkedList:
                 
     def printList(self):
         current = self.head
+        res = ''
         while current is not None:
-            print(current.data)
+            res += str(current.data)
+            res += ' '
             current = current.next
+        print(res)
+        
 
 if __name__ == '__main__':
     # 初始化链表
     L = LinkedList()
     
     # 插入数值
+    print("插入数值")
     L.listAppend(1)
     L.listAppend(2)
     L.listAppend(3)
+    L.printList()
+    print("在第二个位置插入5")
     L.listInsert(2,5)
     print("链表:")
     L.printList()
