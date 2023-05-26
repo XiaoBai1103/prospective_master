@@ -4,7 +4,7 @@
     功能：单链表的基本实现
 */
 #include <stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
 #define ElemType int
 //每个结点的存储结构
 typedef struct Node {

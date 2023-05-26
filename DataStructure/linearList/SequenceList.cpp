@@ -4,7 +4,7 @@
     功能：顺序表的基本实现
 */
 #include<stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
 #define ElemType int 
 typedef struct 
 {
