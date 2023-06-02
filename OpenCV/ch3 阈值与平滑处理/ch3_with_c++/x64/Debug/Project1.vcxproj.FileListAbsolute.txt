@@ -1,0 +1,9 @@
+C:\Users\btx11\Documents\project\Project1\x64\Debug\Project1.exe
+C:\Users\btx11\Documents\project\prospective_master\OpenCV\ch4 图形形态学操作\ch3\x64\Debug\Project1.exe
+C:\Users\btx11\Documents\project\prospective_master\OpenCV\ch4 图形形态学操作\ch4_with_c++\x64\Debug\Project1.exe
+Z:\project\prospective_master\OpenCV\ch2 图像基本操作\ch2_with_c++\x64\Debug\Project1.exe
+Y:\研0学习\project\prospective_master\OpenCV\ch2 图像基本操作\ch2_with_c++\x64\Debug\Project1.exe
+X:\project\ch2_with_c++\x64\Debug\Project1.exe
+\\Mac\iCloud\研0学习\project\prospective_master\OpenCV\ch2 图像基本操作\ch2_with_c++\x64\Debug\Project1.exe
+C:\Users\btx11\Documents\project\prospective_master\OpenCV\ch2 图像基本操作\ch2_with_c++\x64\Debug\Project1.exe
+C:\Users\btx11\Documents\project\prospective_master\OpenCV\ch3 阈值与平滑处理\ch3_with_c++\x64\Debug\Project1.exe
