@@ -1,3 +1,13 @@
 ﻿  main.cpp
 C:\lib\opencv\build\include\opencv2\objdetect\aruco_board.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+Y:\project\prospective_master\OpenCV\操作像素\main.cpp(80,36): warning C4244: “=”: 从“int”转换到“_Tp”，可能丢失数据
+          with
+          [
+              _Tp=float
+          ]
+Y:\project\prospective_master\OpenCV\操作像素\main.cpp(82,38): warning C4244: “=”: 从“double”转换到“_Tp”，可能丢失数据
+          with
+          [
+              _Tp=float
+          ]
   Project1.vcxproj -> Y:\project\prospective_master\OpenCV\操作像素\x64\Debug\Project1.exe

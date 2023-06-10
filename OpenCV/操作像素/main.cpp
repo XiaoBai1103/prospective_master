@@ -47,6 +47,7 @@ void colorReduce_pointer(cv::Mat image, int div = 64) {
         } // 一行图像的处理结束 
     }
 }
+//迭代器扫描 以降低图片色彩为例
 void colorReduce_iter(cv::Mat image, int div = 64) {
 // div 必须是 2 的幂
     int n = static_cast<int>(
@@ -67,7 +68,27 @@ void colorReduce_iter(cv::Mat image, int div = 64) {
         (*it)[2] += div2;
     }
 }
-
+// 重映射图像，创建波浪形效果
+void wave(const cv::Mat& image, cv::Mat& result) {
+    // 映射参数
+    cv::Mat srcX(image.rows, image.cols, CV_32F);
+    cv::Mat srcY(image.rows, image.cols, CV_32F);
+    // 创建映射参数
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            // (i,j)像素的新位置
+            srcX.at<float>(i, j) = j; // 保持在同一列
+            // 原来在第 i 行的像素，现在根据一个正弦曲线移动
+            srcY.at<float>(i, j) = i + 5 * sin(j / 10.0);
+        }
+    }
+    // 应用映射参数
+    cv::remap(image, // 源图像
+        result, // 目标图像
+        srcX, // x 映射
+        srcY, // y 映射
+        cv::INTER_LINEAR); // 填补方法
+}
 
 int main()
 {
@@ -79,11 +100,15 @@ int main()
         printf("读入图片异常");
         return 0;
     }
+    Mat res;
     showImg("显示原始图像",img);
-    //colorReduce_pointer(img);
-    colorReduce_iter(img);
-    
-    showImg("减少色彩后的图像", img);
+    res = img.clone();
+    //colorReduce_pointer(res);
+    colorReduce_iter(res);
+    showImg("减少色彩后的图像", res);
+    res = img.clone();
+    wave(img, res);
+    showImg("图像重映射", res);
  
     waitKey(0);
     destroyAllWindows();
